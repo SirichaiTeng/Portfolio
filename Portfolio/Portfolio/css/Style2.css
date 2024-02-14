@@ -76,9 +76,9 @@ input[type="submit"] {
     transition: background-color 0.3s ease;
 }
 
-    input[type="submit"]:hover {
+input[type="submit"]:hover {
         background-color: #5f459e; /* darker purple */
-    }
+}
 
 p {
     text-align: center;
@@ -90,6 +90,10 @@ a {
     text-decoration: none;
 }
 
-    a:hover {
+a:hover {
         color: #fff; /* link hover color */
-    }
+}
+.error {
+    color: red;
+    font-size: 12px;
+}
