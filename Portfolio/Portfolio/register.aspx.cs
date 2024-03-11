@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Web;
 using System.Web.UI;
@@ -24,7 +25,6 @@ namespace Portfolio
         {
             string username = txtusername.Value.ToString();
             string password = txtpassword.Value.ToString();
-            string confirmPassword = txtconfirmPassword.Value.ToString();
 
             var user = new
             {
@@ -33,9 +33,10 @@ namespace Portfolio
             };
             try
             {
+
                 string jsonUser = JsonConvert.SerializeObject(user);
                 var client = new HttpClient();
-                var request = new HttpRequestMessage(HttpMethod.Post, "http://localhost:5258/api/Register/Registe");
+                var request = new HttpRequestMessage(HttpMethod.Post, "http://localhost:5258/api/Register/Register");
                 request.Headers.Add("x-api-key", "A3587D360526423E929E436FF791846F");
                 var content = new StringContent(jsonUser, null, "application/json");
                 request.Content = content;
